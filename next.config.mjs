@@ -9,6 +9,7 @@ const nextConfig = {
     }
     return config;
   },
+  initialKind: 'edge',
   // এই ফাংশনটি সব ব্যাকএন্ড ও ডাইনামিক রাউটকে ক্লাউডফ্লেয়ার এজের সাথে মানিয়ে নিতে সাহায্য করবে
   experimental: {
     runtime: 'edge',
