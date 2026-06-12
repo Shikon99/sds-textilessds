@@ -1,13 +1,12 @@
 import { updateSession } from '@/lib/supabase/proxy'
 import { type NextRequest } from 'next/server'
-export const config = {
-  runtime: 'experimental-edge',
-};
+
 export async function middleware(request: NextRequest) {
   return await updateSession(request)
 }
 
 export const config = {
+  runtime: 'experimental-edge',
   matcher: [
     /*
      * Match all request paths except:
