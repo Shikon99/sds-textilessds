@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+Allow: /shop
+Allow: /products/
+Allow: /about
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+Allow: /faq
+Allow: /sitemap.xml
+
+# Disallow private/user areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/login
+Disallow: /auth/sign-up
+Disallow: /auth/error
+Disallow: /cart
+Disallow: /checkout
+Disallow: /orders/track
+Disallow: /profile
+Disallow: /*.json$
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Standard crawl settings
+Crawl-delay: 1
+Request-rate: 1/1s
+
+Sitemap: https://sdstextiles.com/sitemap.xml

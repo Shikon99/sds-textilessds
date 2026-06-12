@@ -1,0 +1,36 @@
+name = "sds-textiles"
+main = "dist/index.js"
+compatibility_date = "2024-11-21"
+
+[env.production]
+name = "sds-textiles-prod"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sds-textiles"
+database_id = "your-db-id"
+
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "sds-textiles-images"
+
+[env.production.d1_databases]
+binding = "DB"
+database_name = "sds-textiles-prod"
+database_id = "your-prod-db-id"
+
+[env.production.r2_buckets]
+binding = "IMAGES"
+bucket_name = "sds-textiles-images-prod"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+API_URL = "https://sds-textiles.com"
+
+[vars]
+ENVIRONMENT = "development"
+API_URL = "http://localhost:8787"
+JWT_ALGORITHM = "HS256"
+
+[[triggers.crons]]
+cron = "0 0 * * *"
