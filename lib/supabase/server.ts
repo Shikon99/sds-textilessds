@@ -1,12 +1,11 @@
-import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 /**
- * Especially important if using Fluid compute: Don't put this client in a
- * global variable. Always create a new client within each function when using
- * it.
+ * ডাইনামিক ইম্পোর্ট ব্যবহার করে বান্ডেল সাইজ কমানোর জন্য আপডেট করা হলো
  */
 export async function createClient() {
+  // ডাইনামিক ইম্পোর্ট: লাইব্রেরিটি শুধুমাত্র এখানে রানটাইমে লোড হবে
+  const { createServerClient } = await import('@supabase/ssr')
   const cookieStore = await cookies()
 
   return createServerClient(
@@ -23,9 +22,7 @@ export async function createClient() {
               cookieStore.set(name, value, options),
             )
           } catch {
-            // The "setAll" method was called from a Server Component.
-            // This can be ignored if you have proxy refreshing
-            // user sessions.
+            // সার্ভার কম্পোনেন্ট থেকে কল করা হলে এই এররটি ইগনোর করা হয়
           }
         },
       },
