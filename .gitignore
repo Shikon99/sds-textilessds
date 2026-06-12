@@ -7,6 +7,12 @@
 /.next/
 /out/
 
+.next/
+.vercel/
+.next.zip
+dist/
+*.log
+
 # production
 /build
 
