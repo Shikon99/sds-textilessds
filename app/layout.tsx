@@ -8,7 +8,7 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 })
-
+export const runtime = 'edge';
 export const metadata: Metadata = {
   title: 'SDS Textiles - Premium Textile Shopping',
   description: 'Elevate your style with SDS Textiles. Premium quality fabrics and textiles for all occasions.',
