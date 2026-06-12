@@ -3,7 +3,16 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  runtime: 'edge',
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.plugins = config.plugins || [];
+    }
+    return config;
+  },
+  // এই ফাংশনটি সব ব্যাকএন্ড ও ডাইনামিক রাউটকে ক্লাউডফ্লেয়ার এজের সাথে মানিয়ে নিতে সাহায্য করবে
+  experimental: {
+    runtime: 'edge',
+  }
   images: {
     remotePatterns: [
       {
