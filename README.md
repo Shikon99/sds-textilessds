@@ -445,4 +445,4 @@ Before going live, ensure:
 
 **🎉 Ready to revolutionize textile commerce in Bangladesh!**
 
-Built with ❤️ for SDS Textiles.
+Built with ❤️ for SDS Textiles!
