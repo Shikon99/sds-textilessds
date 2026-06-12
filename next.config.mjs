@@ -3,6 +3,17 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    // এটি আপনার আগের এরর দূর করবে
+    // এবং বান্ডেল সাইজ কমাতে সাহায্য করবে
+    optimizePackageImports: ['@supabase/supabase-js', 'lucide-react'], 
+  },
+  // এটি খুব জরুরি
+  // ফাংশনগুলোকে ছোট করতে এটি সাহায্য করে
+  output: 'standalone',
+  /** @type {import('next').NextConfig} */
+
+
   turbopack: {},
   webpack: (config, { isServer }) => {
     if (isServer) {
