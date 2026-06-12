@@ -6,7 +6,7 @@ const nextConfig = {
   experimental: {
     // এটি আপনার আগের এরর দূর করবে
     // এবং বান্ডেল সাইজ কমাতে সাহায্য করবে
-    optimizePackageImports: ['@supabase/supabase-js', 'lucide-react'], 
+    optimizePackageImports: ['@supabase/ssr', '@supabase/supabase-js', 'lucide-react'], 
   },
   // এটি খুব জরুরি
   // ফাংশনগুলোকে ছোট করতে এটি সাহায্য করে
